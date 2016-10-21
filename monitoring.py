@@ -2,10 +2,11 @@
 # -*- coding: latin-1 -*-
 
 '''
-Contrôle de LEDs branchées à l'Arduino à partir
-d'un PC au moyen du protocole Firmata
-Version simple en mode texte
+visu en fonction de la charge server
+
 '''
+
+
 
 import pyfirmata
 import json
@@ -16,10 +17,10 @@ import time
 #port = 'COM3'            #windows
 port = '/dev/cu.wchusbserial401310'   #linux
 
+
 board = pyfirmata.Arduino(port)
 
-var url="exemple.com"
-
+var url = "http://ex.com/monitoring.php"
 while True:
     tab = urllib2.urlopen(url).read()
     data = json.loads(tab)
